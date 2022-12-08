@@ -1,0 +1,26 @@
+rules:
+- id: dependency-rules-core-import
+  description: Only `api` should import `core`
+  pattern: import ..., ${module}, ...
+  condition: module.matches_regex(r"^core")
+  paths:
+    exclude:
+    - core/
+    - test/
+    - api
+  tags:
+  - architecture
+  - dependencies
+- id: dependency-rules-core-from
+  description: Only `api` should import `core`
+  pattern: from ${module} import ...
+  condition: module.matches_regex(r"^core")
+  paths:
+    exclude:
+    - core/
+    - test/
+    - api
+  tags:
+  - architecture
+  - dependencies
+

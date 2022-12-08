@@ -1,7 +1,7 @@
 from sourcery_rules_generator import sourcery_rules_generator
 
 
-def test_answer_everything():
-    result = sourcery_rules_generator.answer_everything()
+def test_create():
+    result = sourcery_rules_generator.create("core", "api")
 
-    assert result == 42
+    assert result.count("id:") == 2
