@@ -1,0 +1,10 @@
+[run]
+command_line=-m pytest
+source=sourcery_rules_generator
+branch=True
+
+[report]
+fail_under=94
+
+[json]
+pretty_print=True

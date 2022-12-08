@@ -1,0 +1,10 @@
+dist
+*.egg-info/
+
+.mypy_cache
+.pytest_cache
+
+# coverage
+htmlcov
+.coverage
+coverage.json
