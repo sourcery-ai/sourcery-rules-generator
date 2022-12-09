@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "sourcery-rules-generator"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["reka <reka@hey.com>"]
 
 [tool.poetry.scripts]
-sourcery-rules = "sourcery_rules_generator.cli:app"
+sourcery-rules = "sourcery_rules_generator.cli.cli:app"
 
 [tool.poetry.dependencies]
 python = "^3.10"
