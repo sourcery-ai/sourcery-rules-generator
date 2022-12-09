@@ -4,13 +4,21 @@ from sourcery_rules_generator import yaml_converter
 from sourcery_rules_generator.models import SourceryCustomRule, PathsConfig
 
 
-def create(package: str, allowed_importer: Optional[str]) -> str:
-    exclude_paths = [f"{package}/", "test/"]
+def create_yaml_rules(package: str, allowed_importer: Optional[str]) -> str:
+
+    custom_rules = create_sourcery_custom_rules(package, allowed_importer)
+
+    rules_dict = {"rules": [rule.dict(exclude_unset=True) for rule in custom_rules]}
+    return yaml_converter.dumps(rules_dict)
+
+
+def create_sourcery_custom_rules(package: str, allowed_importer: Optional[str]) -> str:
+    exclude_paths = [f"{package}/", "tests/"]
     description = f"Do not import `{package}` in other packages"
     if allowed_importer:
         description = f"Only `{allowed_importer}` should import `{package}`"
         allowed_importer_path = allowed_importer.replace(".", "/")
-        exclude_paths.append(allowed_importer_path)
+        exclude_paths.append(f"{allowed_importer_path}/")
 
     import_rule = SourceryCustomRule(
         id=f"dependency-rules-{package}-import",
@@ -30,10 +38,4 @@ def create(package: str, allowed_importer: Optional[str]) -> str:
         paths=PathsConfig(exclude=exclude_paths),
     )
 
-    rules_dict = {
-        "rules": [
-            import_rule.dict(exclude_unset=True),
-            from_rule.dict(exclude_unset=True),
-        ]
-    }
-    return yaml_converter.dumps(rules_dict)
+    return (import_rule, from_rule)

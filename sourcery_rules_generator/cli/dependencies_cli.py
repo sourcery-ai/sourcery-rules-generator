@@ -6,22 +6,9 @@ from rich.console import Console
 from rich.prompt import Prompt
 from rich.syntax import Syntax
 
-from sourcery_rules_generator import __version__, sourcery_rules_generator
+from sourcery_rules_generator import dependencies
 
 app = typer.Typer(rich_markup_mode="markdown")
-
-
-@app.callback(invoke_without_command=True)
-def callback(
-    ctx: typer.Context,
-    version: bool = typer.Option(False, help="Print the current version."),
-) -> None:
-    """Sourcery Rules Generator"""
-    if version:
-        Console().print(__version__)
-        return
-    if ctx.invoked_subcommand is None:
-        Console().print(ctx.get_help())
 
 
 @app.command()
@@ -53,7 +40,7 @@ def create(
         or interactive
         and Prompt.ask(f"Which packages are allowed to import {package}?")
     )
-    result = sourcery_rules_generator.create(package, allowed_importer)
+    result = dependencies.create_yaml_rules(package, allowed_importer)
     if plain:
         Console().print(result)
     else:

@@ -6,8 +6,8 @@ rules:
   paths:
     exclude:
     - core/
-    - test/
-    - api
+    - tests/
+    - api/
   tags:
   - architecture
   - dependencies
@@ -18,8 +18,8 @@ rules:
   paths:
     exclude:
     - core/
-    - test/
-    - api
+    - tests/
+    - api/
   tags:
   - architecture
   - dependencies
