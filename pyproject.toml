@@ -1,8 +1,17 @@
 [tool.poetry]
 name = "sourcery-rules-generator"
 version = "0.2.0"
-description = ""
-authors = ["reka <reka@hey.com>"]
+description = "Generate architecture rules for Python projects."
+license = "MIT"
+authors = ["reka <reka@sourcery.ai>"]
+readme = "README.md"
+repository = "https://github.com/sourcery-ai/sourcery-rules-generator"
+keywords = ["architecture", "development"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
 
 [tool.poetry.scripts]
 sourcery-rules = "sourcery_rules_generator.cli.cli:app"
