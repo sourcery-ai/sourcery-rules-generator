@@ -16,6 +16,11 @@ You can create Sourcery rules based on a template with the command:
 sourcery-rules <TEMPLATE-NAME> create
 ```
 
+Supported templates:
+
+* dependencies
+* naming (coming soon)
+
 For example:
 
 ```
