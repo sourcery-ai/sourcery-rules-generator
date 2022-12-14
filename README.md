@@ -27,7 +27,7 @@ For example:
 sourcery-rules dependencies create
 ```
 
-![screenshot sourcery-rules create](sourcery-rules_dependencies_create_2022-12-09T09-15-52.png)
+![gif sourcery-rules dependencies create](https://raw.githubusercontent.com/sourcery-ai/sourcery-rules-generator/main/sourcery-rules_dependencies_create.gif)
 
 ### Create Dependencies Rules
 
@@ -38,7 +38,7 @@ With the dependencies template, you can create rules to check the dependencies:
 
 Let's say your project has an architecture like this:
 
-![dependencies overview](dependencies.png)
+![dependencies overview](https://raw.githubusercontent.com/sourcery-ai/sourcery-rules-generator/main/dependencies.png)
 
 You can create rules to ensure:
 

@@ -17,9 +17,9 @@ class PathsConfig(BaseModel):
 
 
 class SourceryCustomRule(BaseModel):
-    id: RuleString = Field(rank=10)
-    description: str = Field(rank=9)
-    pattern: str = Field(rank=8)
+    id: RuleString = Field()
+    description: str = Field()
+    pattern: str = Field()
     replacement: Optional[str] = None
     condition: Optional[str] = None
     explanation: Optional[str] = None
