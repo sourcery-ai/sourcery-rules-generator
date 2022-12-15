@@ -68,8 +68,28 @@ E.g. it makes sense to say that no other package should import the `api` or `cli
 * 1 for `import` statements
 * 1 for `from ... import` statements
 
+## Dependencies Use Cases
 
-### Using the Generated Rules
+### Internal Dependencies Between the Packages of a Project
+
+* [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter): Packages should talk only to their "direct neighbors".
+* A mature package shouldn't depend on a less mature package
+* A core package shouldn't depend on a customer-specific package
+
+Thanks to [w_t_payne](https://news.ycombinator.com/user?id=w_t_payne) and [hbrn](https://news.ycombinator.com/user?id=hbrn) for their input in this [HackerNews discussion](https://news.ycombinator.com/item?id=33999191#34001608) 😃
+
+### External Dependencies
+
+* [Gateway pattern](https://martinfowler.com/articles/gateway-pattern.html): Ensure that only a dedicated package of your software communicates with an external dependency.
+* Ensure that a deprecated library isn't used
+
+This [blog post](https://sourcery.ai/blog/dependency-rules/) shows a 3-step method of defining dependency rules:
+
+1. Draw a diagram showing the optimal dependencies between your packages.
+2. Phrase some rules in a human language based on the diagram: Which package should depend on which?
+3. Translate the rules into code with Sourcery Rules Generator.
+
+## Using the Generated Rules
 
 The generated rules can be used by Sourcery to review your project.
 If you copy the generated rules into your project's `.sourcery.yaml`, Sourcery will use them automatically.
