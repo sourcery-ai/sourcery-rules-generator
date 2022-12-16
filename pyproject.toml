@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sourcery-rules-generator"
-version = "0.3.1"
+version = "0.3.2"
 description = "Generate architecture rules for Python projects."
 license = "MIT"
 authors = ["reka <reka@sourcery.ai>"]

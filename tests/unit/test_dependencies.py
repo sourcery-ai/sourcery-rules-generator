@@ -11,7 +11,7 @@ def test_1_allowed_importer():
             description="Only `api` should import `core`",
             tags=["architecture", "dependencies"],
             pattern="import ..., ${module}, ...",
-            condition='module.matches_regex(r"^core")',
+            condition='module.matches_regex(r"^core\\b")',
             paths=PathsConfig(exclude=["core/", "tests/", "api/"]),
         ),
         SourceryCustomRule(
@@ -19,7 +19,7 @@ def test_1_allowed_importer():
             description="Only `api` should import `core`",
             tags=["architecture", "dependencies"],
             pattern="from ${module} import ...",
-            condition='module.matches_regex(r"^core")',
+            condition='module.matches_regex(r"^core\\b")',
             paths=PathsConfig(exclude=["core/", "tests/", "api/"]),
         ),
     )
@@ -36,7 +36,7 @@ def test_0_allowed_importer():
             description="Do not import `api` in other packages",
             tags=["architecture", "dependencies"],
             pattern="import ..., ${module}, ...",
-            condition='module.matches_regex(r"^api")',
+            condition='module.matches_regex(r"^api\\b")',
             paths=PathsConfig(exclude=["api/", "tests/"]),
         ),
         SourceryCustomRule(
@@ -44,7 +44,7 @@ def test_0_allowed_importer():
             description="Do not import `api` in other packages",
             tags=["architecture", "dependencies"],
             pattern="from ${module} import ...",
-            condition='module.matches_regex(r"^api")',
+            condition='module.matches_regex(r"^api\\b")',
             paths=PathsConfig(exclude=["api/", "tests/"]),
         ),
     )
@@ -61,7 +61,7 @@ def test_1_allowed_importer_package_name_incl_dot():
             description="Only `app.api` should import `app.core`",
             tags=["architecture", "dependencies"],
             pattern="import ..., ${module}, ...",
-            condition='module.matches_regex(r"^app\.core")',
+            condition='module.matches_regex(r"^app\.core\\b")',
             paths=PathsConfig(exclude=["app/core/", "tests/", "app/api/"]),
         ),
         SourceryCustomRule(
@@ -69,7 +69,7 @@ def test_1_allowed_importer_package_name_incl_dot():
             description="Only `app.api` should import `app.core`",
             tags=["architecture", "dependencies"],
             pattern="from ${module} import ...",
-            condition='module.matches_regex(r"^app\.core")',
+            condition='module.matches_regex(r"^app\.core\\b")',
             paths=PathsConfig(exclude=["app/core/", "tests/", "app/api/"]),
         ),
     )
@@ -86,7 +86,7 @@ def test_0_allowed_importer_package_name_with_dot():
             description="Do not import `app.api` in other packages",
             tags=["architecture", "dependencies"],
             pattern="import ..., ${module}, ...",
-            condition='module.matches_regex(r"^app\.api")',
+            condition='module.matches_regex(r"^app\.api\\b")',
             paths=PathsConfig(exclude=["app/api/", "tests/"]),
         ),
         SourceryCustomRule(
@@ -94,7 +94,7 @@ def test_0_allowed_importer_package_name_with_dot():
             description="Do not import `app.api` in other packages",
             tags=["architecture", "dependencies"],
             pattern="from ${module} import ...",
-            condition='module.matches_regex(r"^app\.api")',
+            condition='module.matches_regex(r"^app\.api\\b")',
             paths=PathsConfig(exclude=["app/api/", "tests/"]),
         ),
     )
