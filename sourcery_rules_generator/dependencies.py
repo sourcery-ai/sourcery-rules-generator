@@ -31,7 +31,7 @@ def create_sourcery_custom_rules(package: str, allowed_importer: Optional[str]) 
         description=description,
         tags=["architecture", "dependencies"],
         pattern="import ..., ${module}, ...",
-        condition=f'module.matches_regex(r"^{package_in_regex}")',
+        condition=f'module.matches_regex(r"^{package_in_regex}\\b")',
         paths=PathsConfig(exclude=exclude_paths),
     )
 
@@ -40,7 +40,7 @@ def create_sourcery_custom_rules(package: str, allowed_importer: Optional[str]) 
         description=description,
         tags=["architecture", "dependencies"],
         pattern="from ${module} import ...",
-        condition=f'module.matches_regex(r"^{package_in_regex}")',
+        condition=f'module.matches_regex(r"^{package_in_regex}\\b")',
         paths=PathsConfig(exclude=exclude_paths),
     )
 

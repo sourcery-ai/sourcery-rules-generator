@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.2] - 2022-12-16
+
+### Fixed
+
+* Dependencies rules: Detect only the package and its subpackages. Don't detect imports that are only a text match. [GH-10](https://github.com/sourcery-ai/sourcery-rules-generator/issues/10)
+
 ## [0.3.1] - 2022-12-15
 
 ### Added
