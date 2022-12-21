@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sourcery-rules-generator"
-version = "0.3.2"
+version = "0.3.3"
 description = "Generate architecture rules for Python projects."
 license = "MIT"
 authors = ["reka <reka@sourcery.ai>"]
@@ -17,7 +17,7 @@ classifiers = [
 sourcery-rules = "sourcery_rules_generator.cli.cli:app"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.9"
 typer = {extras = ["all"], version = "0.7.0"}
 rich = "^12.6.0"
 pydantic = "^1.10.2"
@@ -40,7 +40,7 @@ profile = "black"
 legacy_tox_ini = """
 [tox]
 isolated_build = true
-envlist = py310,py311
+envlist = py39,py310,py311
 
 [testenv]
 allowlist_externals = poetry
