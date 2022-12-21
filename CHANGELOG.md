@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.3] - 2022-12-21
+
 ### Added
 
-* Tests with tox
+* Tests with tox [GH-1](https://github.com/sourcery-ai/sourcery-rules-generator/issues/1)
+* Support Python 3.9 [GH-2](https://github.com/sourcery-ai/sourcery-rules-generator/issues/2)
  
 ## [0.3.2] - 2022-12-16
 
