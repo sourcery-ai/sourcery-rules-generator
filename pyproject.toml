@@ -31,9 +31,24 @@ black = "22.8.0"
 isort = "5.10.1"
 mypy = "0.971"
 flake8 = "5.0.4"
+tox = "^4.0.16"
 
 [tool.isort]
 profile = "black"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = true
+envlist = py310,py311
+
+[testenv]
+allowlist_externals = poetry
+commands_pre =
+    poetry install --sync
+commands =
+    poetry run pytest tests/ --import-mode importlib
+"""
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
