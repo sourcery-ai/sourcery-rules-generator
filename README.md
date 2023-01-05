@@ -18,8 +18,9 @@ sourcery-rules <TEMPLATE-NAME> create
 
 Supported templates:
 
-* dependencies
-* naming (coming soon)
+* [dependencies](#create-dependencies-rules)
+* [naming / voldemort](#create-voldemort-rules): avoid some names
+* naming / name vs type mismatch (coming soon)
 
 For example:
 
@@ -88,6 +89,37 @@ This [blog post](https://sourcery.ai/blog/dependency-rules/) shows a 3-step meth
 1. Draw a diagram showing the optimal dependencies between your packages.
 2. Phrase some rules in a human language based on the diagram: Which package should depend on which?
 3. Translate the rules into code with Sourcery Rules Generator.
+
+## Create Voldemort Rules
+
+With a "voldemort" template, you can create rules that ensure that a specific name isn't used in your code.
+
+For example:
+
+* The word `annual` shouldn't be used, because the preferred term is `yearly`.
+* The word `util` shouldn't be used, because it's overly general.
+
+You can create a "voldemort" rule with the command:
+
+```
+sourcery-rules voldemort create
+```
+
+![screenshot sourcery-rules voldemort create](https://raw.githubusercontent.com/sourcery-ai/sourcery-rules-generator/main/voldemort_create.png)
+
+You'll be prompted to provide:
+
+* the name that you want to avoid
+
+=>
+
+5 rules will be generated:
+
+* function names
+* function arguments
+* class names
+* variable declarations
+* variable assignments
 
 ## Using the Generated Rules
 

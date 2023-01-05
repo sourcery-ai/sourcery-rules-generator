@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2023-01-05
+
+### Added
+
+* "voldemort" rule template and command: names to avoid in your code
+
 ## [0.3.3] - 2022-12-21
 
 ### Added
