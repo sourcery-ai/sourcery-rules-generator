@@ -105,7 +105,7 @@ You can create a "voldemort" rule with the command:
 sourcery-rules voldemort create
 ```
 
-![screenshot sourcery-rules voldemort create](voldemort_create.png)
+![screenshot sourcery-rules voldemort create](https://raw.githubusercontent.com/sourcery-ai/sourcery-rules-generator/main/voldemort_create.png)
 
 You'll be prompted to provide:
 
