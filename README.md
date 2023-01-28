@@ -59,8 +59,15 @@ You'll be prompted to provide:
 * a package name
 * the packages that are allowed to import the package above
 
+The 1st parameter is the fully qualified name of a package or module.  
+It can be a package within your project or an external dependency.
+
 The 2nd parameter is optional.  
-E.g. it makes sense to say that no other package should import the `api` or `cli` package of your project.
+You have the following possibilities:
+
+* 0 allowed importer (e.g. for packages like `api`, `cli`). Leave this parameter empty.
+* 1 allowed importer. Provide the importer package's fully qualified name.
+* Multiple allowed importers. Provide multiple fully qualified package names separated by a comma `,`
 
 =>
 
@@ -68,6 +75,11 @@ E.g. it makes sense to say that no other package should import the `api` or `cli
 
 * 1 for `import` statements
 * 1 for `from ... import` statements
+
+Every generated rule allows imports:
+
+* within the package itself
+* in tests
 
 ## Dependencies Use Cases
 

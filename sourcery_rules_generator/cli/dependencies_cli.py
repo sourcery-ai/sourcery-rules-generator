@@ -26,7 +26,7 @@ For example:
 ## Parameters for the "Dependencies" Template
 
 1. The package that gets imported. Required.
-2. The package(s) that are allowed to import the package above. This parameter can be empty.
+2. The package(s) that are allowed to import the package above. This parameter can be empty. You can provide multiple fully qualified package names separated by comma `,`.
 """
 
 
@@ -35,12 +35,12 @@ def create(
     package_option: str = typer.Option(
         None,
         "--package",
-        help="The fully qualified name of the package",
+        help="The fully qualified name of the package. Always exactly 1 package.",
     ),
     caller_option: str = typer.Option(
         None,
         "--importer",
-        help="The fully qualified name of the allowed importer",
+        help="The fully qualified names of the allowed importers separated by comma. This can be 0, 1 or more importers.",
     ),
     interactive_flag: bool = typer.Option(
         True,
