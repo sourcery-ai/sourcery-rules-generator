@@ -1,0 +1,28 @@
+rules:
+- id: dependency-rules-sqlalchemy-import
+  description: Only `app.db`, `app.db_util` should import `sqlalchemy`
+  pattern: import ..., ${module}, ...
+  condition: module.matches_regex(r"^sqlalchemy\b")
+  paths:
+    exclude:
+    - sqlalchemy/
+    - tests/
+    - app/db/
+    - app/db_util/
+  tags:
+  - architecture
+  - dependencies
+- id: dependency-rules-sqlalchemy-from
+  description: Only `app.db`, `app.db_util` should import `sqlalchemy`
+  pattern: from ${module} import ...
+  condition: module.matches_regex(r"^sqlalchemy\b")
+  paths:
+    exclude:
+    - sqlalchemy/
+    - tests/
+    - app/db/
+    - app/db_util/
+  tags:
+  - architecture
+  - dependencies
+
