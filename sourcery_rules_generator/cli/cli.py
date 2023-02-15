@@ -4,12 +4,17 @@ import typer
 
 from rich.console import Console
 
-from sourcery_rules_generator.cli import dependencies_cli, voldemort_cli
+from sourcery_rules_generator.cli import (
+    dependencies_cli,
+    voldemort_cli,
+    expensive_loop_cli,
+)
 from sourcery_rules_generator import __version__
 
 app = typer.Typer(rich_markup_mode="markdown")
 app.add_typer(dependencies_cli.app, name="dependencies")
 app.add_typer(voldemort_cli.app, name="voldemort")
+app.add_typer(expensive_loop_cli.app, name="expensive-loop")
 
 
 @app.callback(invoke_without_command=True)
