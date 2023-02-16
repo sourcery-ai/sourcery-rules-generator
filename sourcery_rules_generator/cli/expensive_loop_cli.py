@@ -25,7 +25,7 @@ For example:
 
 ## Parameters for the "Expensive Loop" Template
 
-1. The fully qualified name of the expensive function. Required.
+1. The fully qualified name of the expensive function, that you want to avoid in loops. Required.
 """
 
 
@@ -66,7 +66,7 @@ def create(
         avoided_function_option
         or interactive
         and Prompt.ask(
-            "The fully qualified function name to avoid in loops: (required)",
+            "The fully qualified name of the expensive function (required)",
             console=stderr_console,
         )
     )
