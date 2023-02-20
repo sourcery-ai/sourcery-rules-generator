@@ -2,7 +2,7 @@ from sourcery_rules_generator import voldemort
 from sourcery_rules_generator.models import SourceryCustomRule
 
 
-def test_1_allowed_importer():
+def test_do_not_allow_util():
     result = voldemort.create_sourcery_custom_rules("util")
 
     expected = (

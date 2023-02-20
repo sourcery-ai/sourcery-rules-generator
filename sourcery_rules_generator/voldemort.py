@@ -1,7 +1,5 @@
-from typing import Optional
-
 from sourcery_rules_generator import yaml_converter
-from sourcery_rules_generator.models import SourceryCustomRule, PathsConfig
+from sourcery_rules_generator.models import SourceryCustomRule
 
 
 def create_yaml_rules(name_to_avoid: str):

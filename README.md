@@ -21,6 +21,7 @@ Supported templates:
 * [dependencies](#create-dependencies-rules)
 * [naming / voldemort](#create-voldemort-rules): avoid some names
 * naming / name vs type mismatch (coming soon)
+* performance / expensive loop
 
 For example:
 
@@ -133,6 +134,14 @@ You'll be prompted to provide:
 * variable declarations
 * variable assignments
 
+## Expensive Loop
+
+Loops often cause performance problems. Especially, if they execute expensive operations: talking to external systems, complex calculations.
+
+```
+sourcery-rules expensive-loop create
+```
+
 ## Using the Generated Rules
 
 The generated rules can be used by Sourcery to review your project.
@@ -143,3 +152,14 @@ All the generated rules have the tag `architecture`. Once you've copied them to 
 ```
 sourcery review --enable architecture .
 ```
+
+You'll be prompted to provide:
+
+* the fully qualified name of the function that shouldn't be called in loops
+
+=>
+
+2 rules will be generated:
+
+* for `for` loops
+* for `while` loops
