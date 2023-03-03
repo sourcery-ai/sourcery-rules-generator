@@ -12,9 +12,15 @@ from sourcery_rules_generator.cli import (
 from sourcery_rules_generator import __version__
 
 app = typer.Typer(rich_markup_mode="markdown")
-app.add_typer(dependencies_cli.app, name="dependencies")
-app.add_typer(voldemort_cli.app, name="voldemort")
-app.add_typer(expensive_loop_cli.app, name="expensive-loop")
+app.add_typer(
+    dependencies_cli.app, name="dependencies", help="Detect not allowed imports."
+)
+app.add_typer(voldemort_cli.app, name="voldemort", help="Detect deny-listed words.")
+app.add_typer(
+    expensive_loop_cli.app,
+    name="expensive-loop",
+    help="Detect expensive calls in loops.",
+)
 
 
 @app.callback(invoke_without_command=True)

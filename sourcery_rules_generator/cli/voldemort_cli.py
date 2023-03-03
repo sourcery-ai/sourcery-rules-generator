@@ -50,7 +50,7 @@ def create(
         help='Display less info about the "Voldemort" template.',
     ),
 ):
-    """Create a new Sourcery Voldemort rule."""
+    """Create a rule to flag a deny-listed word."""
     interactive = sys.stdin.isatty() and interactive_flag
     stderr_console = Console(stderr=True)
     if interactive and not quiet:
