@@ -50,7 +50,7 @@ def create(
         help='Display less info about the "Expensive Loop" template.',
     ),
 ):
-    """Create a new Sourcery Expensive Loop rule."""
+    """Create a rule to detect an expensive call in a loop."""
     interactive = sys.stdin.isatty() and interactive_flag
     stderr_console = Console(stderr=True)
     if interactive and not quiet:

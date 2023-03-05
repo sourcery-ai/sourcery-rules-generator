@@ -142,17 +142,6 @@ Loops often cause performance problems. Especially, if they execute expensive op
 sourcery-rules expensive-loop create
 ```
 
-## Using the Generated Rules
-
-The generated rules can be used by Sourcery to review your project.
-If you copy the generated rules into your project's `.sourcery.yaml`, Sourcery will use them automatically.
-
-All the generated rules have the tag `architecture`. Once you've copied them to your `.sourcery.yaml`, you can run them with:
-
-```
-sourcery review --enable architecture .
-```
-
 You'll be prompted to provide:
 
 * the fully qualified name of the function that shouldn't be called in loops
@@ -163,3 +152,14 @@ You'll be prompted to provide:
 
 * for `for` loops
 * for `while` loops
+
+## Using the Generated Rules
+
+The generated rules can be used by Sourcery to review your project.
+If you copy the generated rules into your project's `.sourcery.yaml`, Sourcery will use them automatically.
+
+All the generated rules have the tag `architecture`. Once you've copied them to your `.sourcery.yaml`, you can run them with:
+
+```
+sourcery review --enable architecture .
+```

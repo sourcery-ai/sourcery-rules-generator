@@ -56,7 +56,10 @@ def create(
         help='Display less info about the "Dependencies" template.',
     ),
 ):
-    """Create a new Sourcery dependency rule."""
+    """Create rules to check the dependencies between packages of a project.
+
+    Create rules to verify that internal and external packages are imported only by the allowed parts of a project.
+    """
     interactive = sys.stdin.isatty() and interactive_flag
     stderr_console = Console(stderr=True)
     if interactive and not quiet:
